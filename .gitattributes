@@ -1,0 +1,8 @@
+# index.html 是本项目构建脚本产出的**成品**，字节即"签名"
+# （构建脚本 .build/build_animated.py 末尾有「两处产物逐字节一致」的哈希断言）。
+#
+# -text 表示 git 不对它做任何换行转换（本机构建产物是 CRLF），
+# 因此仓库里存的字节与本地构建结果完全一致。
+# 代价：git diff 不再对 index.html 做行级比较 —— 但它是一个 1.9 MB 的
+# 紧凑单文件（含 21 张 data URI 图片），本来也不适合逐行看 diff。
+index.html -text
